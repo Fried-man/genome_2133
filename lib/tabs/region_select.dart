@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-AlertDialog region (context) {
+AlertDialog region (context, mapWidget) {
   return AlertDialog(
       title: const Center(child: Text("Select Region(s)")),
       content: SizedBox(
@@ -34,7 +34,9 @@ AlertDialog region (context) {
                           return Padding(
                             padding: const EdgeInsets.all(4.0),
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                mapWidget.country = countries[index];
+                              },
                               child: Row(
                                 children: [
                                   Expanded(
